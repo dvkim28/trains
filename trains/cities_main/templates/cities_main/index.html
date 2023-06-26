@@ -1,0 +1,32 @@
+{% extends 'cities_main/base.html' %}
+{% block title %} List of cities {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-8">
+            <h1>List of cities</h1>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in city %}
+                <tr>
+                    <th scope="row">{{ i.pk }}</th>
+                    <td>{{ i.name }}</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
