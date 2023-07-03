@@ -17,10 +17,10 @@ class CityCreateView(CreateView):
     model = City
     template_name = 'cities_main/includes/create_form.html'
     form_class = CityForm
-    success_url = reverse_lazy('homepage')
+    success_url = reverse_lazy('cities_main:homepage')
 
 class CityUpdateView(UpdateView):
     model = City
     template_name = 'cities_main/update_city.html'
-    success_url = reverse_lazy('homepage')
+    success_url = reverse_lazy('cities_main:homepage')
     form_class = CityForm

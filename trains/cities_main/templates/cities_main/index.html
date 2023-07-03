@@ -19,12 +19,13 @@
                 <tr>
                     <th scope="row">{{ i.pk }}</th>
                     <td>{{ i.name }}</td>
-                    <td>Edit</td>
+                    <td><a href="{% url 'cities_main:UpdateCity' slug=i.slug %}">Edit</a></td>
                     <td>Delete</td>
                 </tr>
                 {% endfor %}
                 </tbody>
             </table>
+            {% include 'cities_main/includes/create_form.html'%}
         </div>
     </div>
 </div>
