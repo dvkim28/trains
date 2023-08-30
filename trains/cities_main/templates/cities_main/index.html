@@ -19,8 +19,15 @@
                 <tr>
                     <th scope="row">{{ i.pk }}</th>
                     <td>{{ i.name }}</td>
-                    <td>Edit</td>
-                    <td>Delete</td>
+                    <td>
+                        <a href="{% url 'cities_main:UpdateCity' slug=i.slug%}" class="text-decoration-none">
+                            <button type="button" class="btn btn-warning">Edit</button>
+                        </a>
+                    </td>
+                    <td><a href="{% url 'cities_main:DeleteCity' slug=i.slug%}" class="text-decoration-none">
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </a>
+                    </td>
                 </tr>
                 {% endfor %}
                 </tbody>

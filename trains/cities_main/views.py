@@ -10,6 +10,7 @@ from .models import City
 
 class TrainListView(ListView):
     model = City
+    ordering = 'created'
     context_object_name = 'city'
     template_name = 'cities_main/index.html'
 
@@ -17,10 +18,13 @@ class CityCreateView(CreateView):
     model = City
     template_name = 'cities_main/includes/create_form.html'
     form_class = CityForm
-    success_url = reverse_lazy('homepage')
-
+    success_url = 'http://127.0.0.1:8000/'
 class CityUpdateView(UpdateView):
     model = City
     template_name = 'cities_main/update_city.html'
-    success_url = reverse_lazy('homepage')
+    success_url = 'http://127.0.0.1:8000/'
     form_class = CityForm
+class CityDeleteView(DeleteView):
+    model = City
+    template_name = 'cities_main/delete_city.html'
+    success_url = 'http://127.0.0.1:8000/'
