@@ -1,8 +1,10 @@
 {% extends 'cities_main/base.html' %}
 {% block title %} {{city.name}} updating {% endblock %}
 {% block body %}
-<h1>City</h1>
 <div class="container">
+<h1>City</h1>
+  <div class="row justify-content-center">
+        <div class="col-sm-12">
 <div class="row">
   <div class="col-sm-3">
 <form method="post">
@@ -16,4 +18,5 @@
   </div>
 </div>
 </div>
+  </div>
 {% endblock %}
