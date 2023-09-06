@@ -12,6 +12,7 @@ from wagon.forms import AirplaneForm
 
 class AirplaneListView(ListView):
     model = Airplane
+    ordering = ("-id")
     context_object_name = 'airplane'
     template_name = 'wagon/index.html'
     paginate_by = 5

@@ -18,7 +18,7 @@ class TrainListView(ListView):
 
 class CityCreateView(SuccessMessageMixin, CreateView):
     model = City
-    template_name = 'cities_main/includes/create_form.html'
+    template_name = 'cities_main/create_form.html'
     form_class = CityForm
     success_url = 'http://127.0.0.1:8000/'
     success_message = "City was successfully created"
