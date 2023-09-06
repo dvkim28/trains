@@ -1,0 +1,75 @@
+{% extends 'wagon/base.html' %}
+{% block title %} List of cities {% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}, list-group-item"{% endif %}>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+        <div class="alert alert-success" role="alert">{{ message }}</div>
+
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+        </div>
+    </div>
+</div>
+        <div class="col-sm-12">
+            <h1>List of Airplanes</h1>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Airplane</th>
+                    <th scope="col">From city</th>
+                    <th scope="col">To city</th>
+                    <th scope="col">Travel time</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in airplane %}
+                <tr>
+                    <td><a class="text-decoration-none" href="{% url 'wagon:airplane_detail' pk=i.pk%}">{{ i.pk }}</a></td>
+                    <td><a class="text-decoration-none" href="{% url 'wagon:airplane_update' pk=i.pk%}">{{ i.name }}</a></td>
+                    <td>{{i.from_city}}</td>
+                    <td>{{i.to_city}}</td>
+                    <td>{{i.travel_time}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+                {% if page_obj.has_previous %}
+      <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      </a>
+        {%endif%}
+    </li>
+      {% for page in page_obj.paginator.page_range%}
+    <li class="page-item {% if page == page_obj.number %} active {% endif %}">
+        <a class="page-link" href="?page={{page}}">{{page}}</a>
+    </li>
+      {%endfor%}
+              {% if page_obj.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+        <span class="sr-only">Next</span>
+          {%endif%}
+      </a>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
