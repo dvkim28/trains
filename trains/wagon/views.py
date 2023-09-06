@@ -27,17 +27,17 @@ class AirplaneUpdateView(SuccessMessageMixin, UpdateView):
      success_url = 'http://127.0.0.1:8000/'
      success_message = "Airplane was successfully updated"
 
-# class CityUpdateView(SuccessMessageMixin, UpdateView):
-#      model = Airplane
-#      template_name = 'wagon/update_airplane.html'
-#      success_url = 'http://127.0.0.1:8000/'
-#      form_class = AirplaneForm
-#      success_message = "Airplane was updated successfully"
 
-# class CityDeleteView(SuccessMessageMixin, DeleteView):
-#     model = City
-#     template_name = 'cities_main/delete_city.html'
-#     success_url = 'http://127.0.0.1:8000/'
-#     success_message = "City was deleted successfully"
+class AirplaneDeleteView(SuccessMessageMixin, DeleteView):
+    model = Airplane
+    template_name = 'wagon/delete_airplane.html'
+    success_url = 'http://127.0.0.1:8000/airplane'
+    success_message = "Airplane was deleted successfully"
 
-# Create your views here.
+class AirplaneCreateView(SuccessMessageMixin, CreateView):
+    model = Airplane
+    form_class = AirplaneForm
+    template_name = 'wagon/create_airplane.html'
+    success_url = 'http://127.0.0.1:8000/airplane'
+    success_message = "Airplane was successfully created"
+
