@@ -1,0 +1,19 @@
+{% extends 'cities_main/base.html' %}
+{% block title %} Finding route {% endblock %}
+{% block body %}
+<div class="container">
+
+<div class="row">
+  <div class="col-sm-3">
+<form method="post">
+  {% csrf_token %}
+  {{form}}
+    <div class="form-group">
+      <br>
+        <button type="submit" class="btn btn-outline-secondary">Save</button>
+  </div>
+</form>
+  </div>
+</div>
+</div>
+{% endblock %}
