@@ -47,7 +47,7 @@ def add_route(request):
                 initial={
                     'from_city': cities[from_city_id],
                     'to_city': cities[to_city_id],
-                    'travel_time': total_time,
+                    'travel_times': total_time,
                     'airplanes': qs
                 }
             )

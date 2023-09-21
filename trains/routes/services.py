@@ -26,7 +26,7 @@ def get_routes(request, form) -> dict:
     from_city = data['from_city']
     to_city = data['to_city']
     cities = data['cities']
-    travel_time = data['travel_time']
+    travel_time = data['travel_times']
     all_routes = list(dfs_path(graph, from_city.id, to_city.id))
     if not len(all_routes):
         raise ValueError('No routes found')
