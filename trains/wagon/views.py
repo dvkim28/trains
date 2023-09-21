@@ -25,20 +25,19 @@ class AirplaneUpdateView(SuccessMessageMixin, UpdateView):
      model = Airplane
      template_name = 'wagon/update_airplane.html'
      form_class = AirplaneForm
-     success_url = 'http://127.0.0.1:8000/'
+     success_url = '/'
      success_message = "Airplane was successfully updated"
 
 
 class AirplaneDeleteView(SuccessMessageMixin, DeleteView):
     model = Airplane
     template_name = 'wagon/delete_airplane.html'
-    success_url = 'http://127.0.0.1:8000/airplane'
+    success_url = '/airplane'
     success_message = "Airplane was deleted successfully"
 
 class AirplaneCreateView(SuccessMessageMixin, CreateView):
     model = Airplane
     form_class = AirplaneForm
     template_name = 'wagon/create_airplane.html'
-    success_url = 'http://127.0.0.1:8000/airplane'
+    success_url = '/airplane'
     success_message = "Airplane was successfully created"
-

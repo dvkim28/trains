@@ -28,7 +28,7 @@ class RouteForm(forms.Form):
 
     class Meta:
         model = Route
-        fields = ['from_city', 'to_city', 'travel_times', 'trains', 'travel_time']
+        fields = ['from_city', 'to_city', 'travel_times', 'trains']
         widgets = {
             "name": TextInput(attrs={
                 'class': 'form-control'
@@ -50,7 +50,7 @@ class RouteModelForm(forms.ModelForm):
     to_city = forms.ModelChoiceField(
         queryset=City.objects.all(), widget=forms.HiddenInput
     )
-    airplanes = forms.ModelMultipleChoiceField(
+    airplane = forms.ModelMultipleChoiceField(
         queryset=Airplane.objects.all(), required=False, widget=forms.SelectMultiple(
             attrs={'class': 'form-control d-none'}
         )

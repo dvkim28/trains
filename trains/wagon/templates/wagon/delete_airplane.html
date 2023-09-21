@@ -2,39 +2,39 @@
 {% block title %} Deleting {{airplane.name}}  {% endblock %}
 {% block body %}
 <div class="container">
-  <h4>Deleting {{ airplane.name }}</h4>
-            <div class="col-sm-12">
-            <h6>Airplane</h6>
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">Airplane</th>
-                    <th scope="col">From city</th>
-                    <th scope="col">To city</th>
-                    <th scope="col">Travel time</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">{{ object.pk }}</th>
-                    <td>{{ object.name }}</td>
-                    <td>{{object.from_city}}</td>
-                    <td>{{object.to_city}}</td>
-                    <td>{{object.travel_time}}</td>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            <nav aria-label="Page navigation example">
-</nav>
-        </div>
-<form method="post">
-  {% csrf_token %}
-  {{form}}
-            <button type="submit" class="btn btn-outline-danger">Delete</button>
-</form>
-  </div>
+    <h4>Deleting {{ airplane.name }}</h4>
+    <div class="col-sm-12">
+        <h6>Airplane</h6>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Airplane</th>
+                <th scope="col">From city</th>
+                <th scope="col">To city</th>
+                <th scope="col">Travel time</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">{{ object.pk }}</th>
+                <td>{{ object.name }}</td>
+                <td>{{object.from_city}}</td>
+                <td>{{object.to_city}}</td>
+                <td>{{object.travel_time}}</td>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+        </nav>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit" class="btn btn-outline-danger">Delete</button>
+    </form>
+</div>
 </div>
 </div>
 {% endblock %}

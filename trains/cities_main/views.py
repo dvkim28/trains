@@ -13,7 +13,7 @@ class TrainListView(ListView):
     model = City
     ordering = '-created'
     context_object_name = 'city'
-    template_name = 'cities_main/index.html'
+    template_name = '/'
     paginate_by = 5
 
 class CityCreateView(SuccessMessageMixin, CreateView):

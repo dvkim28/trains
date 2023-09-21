@@ -2,16 +2,16 @@
 {% block title %} Creating new airplane{% endblock %}
 {% block body %}
 <div class="container">
-  <h4>Creating a new airplane</h4>
-            <div class="col-sm-12">
-</nav>
-        </div>
-<form method="post">
-  {% csrf_token %}
-  {{form}}
-            <button type="submit" class="btn btn-outline-success">Save</button>
-</form>
-  </div>
+    <h4>Creating a new airplane</h4>
+    <div class="col-sm-12">
+        </nav>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit" class="btn btn-outline-success">Save</button>
+    </form>
+</div>
 </div>
 </div>
 {% endblock %}
