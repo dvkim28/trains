@@ -35,7 +35,7 @@ def add_route(request):
         context = {}
         data = request.POST
         if data:
-            total_time = int(data['total_time'])
+            total_time = data['total_time']
             from_city_id = int(data['from_city'])
             to_city_id = int(data['to_city'])
             airplanes = data['airplane'].split(',')
