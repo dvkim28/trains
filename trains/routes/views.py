@@ -38,7 +38,7 @@ def add_route(request):
             total_time = data['travel_times']
             from_city_id = int(data['from_city'])
             to_city_id = int(data['to_city'])
-            airplanes = data['airplanes'].split(',')
+            airplanes = data['airplane'].split(',')
             airplanes_list = [int(t) for t in airplanes if t.isdigit()]
             qs = Airplane.objects.filter(id__in=airplanes_list).select_related('from_city', 'to_city')
             cities = City.objects.filter(

@@ -50,7 +50,7 @@ class RouteModelForm(forms.ModelForm):
     to_city = forms.ModelChoiceField(
         queryset=City.objects.all(), widget=forms.HiddenInput
     )
-    airplane = forms.ModelMultipleChoiceField(
+    airplanes = forms.ModelMultipleChoiceField(
         queryset=Airplane.objects.all(), required=False, widget=forms.SelectMultiple(
             attrs={'class': 'form-control d-none'}
         )
