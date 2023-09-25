@@ -38,7 +38,7 @@ def add_route(request):
             total_time = data['travel_times']
             from_city_id = int(data['from_city'])
             to_city_id = int(data['to_city'])
-            airplanes = data['airplane'].split(',')
+            airplanes = request.POST.getlist('airplanes')
             airplanes_list = [int(t) for t in airplanes if t.isdigit()]
             qs = Airplane.objects.filter(id__in=airplanes_list).select_related('from_city', 'to_city')
             cities = City.objects.filter(
@@ -53,6 +53,19 @@ def add_route(request):
             )
             context['form'] = form
         return render(request, 'routes/create.html', context)
+    else:
+        messages.error(request, 'Invalid')
+        return redirect('/')
+
+
+def save_route(request):
+    if request.method == 'POST':
+        form = RouteModelForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Saved')
+            return redirect('/')
+        return render(request, 'routes/create.html', {'form': form})
     else:
         messages.error(request, 'Invalid')
         return redirect('/')
